@@ -87,14 +87,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()){
-            case R.id.nav_demo_frag1:
-                fragment = new DemoFrag1();
-                loadFragment(fragment);
-                break;
-        }
-
-        binding.drawerLayout.closeDrawer(GravityCompat.START);
+//        switch (item.getItemId()){
+//            case R.id.nav_demo_frag1:
+//                fragment = new DemoFrag1();
+//                loadFragment(fragment);
+//                break;
+//        }
+//
+//        binding.drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 

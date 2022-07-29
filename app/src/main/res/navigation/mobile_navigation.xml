@@ -9,22 +9,39 @@
         android:id="@+id/nav_home"
         android:name="com.ocean.navigationdrawerdemo.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_from_home_frag_to_nav_gallery"
+            app:destination="@+id/nav_gallery"/>
+    </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.ocean.navigationdrawerdemo.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_gallery">
+        <action
+            android:id="@+id/action_from_nav_gallery_home"
+            app:destination="@+id/nav_home"/>
+    </fragment>
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.ocean.navigationdrawerdemo.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_slideshow" >
+        <action
+            android:id="@+id/action_from_nav_slideshow_to_nav_home"
+            app:destination="@+id/nav_home"/>
+    </fragment>
+
     <fragment
         android:id="@+id/demoFrag1"
         android:name="com.ocean.navigationdrawerdemo.ui.demofrag1.DemoFrag1"
         android:label="fragment_demo_frag1"
-        tools:layout="@layout/fragment_demo_frag1" />
+        tools:layout="@layout/fragment_demo_frag1" >
+        <action
+            android:id="@+id/action_from_demo_frag1_to_nav_home"
+            app:destination="@+id/nav_home"/>
+    </fragment>
 </navigation>
