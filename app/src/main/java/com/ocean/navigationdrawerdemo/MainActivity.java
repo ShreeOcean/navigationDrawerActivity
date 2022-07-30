@@ -21,6 +21,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.ocean.navigationdrawerdemo.databinding.ActivityMainBinding;
 import com.ocean.navigationdrawerdemo.ui.demofrag1.DemoFrag1;
+import com.ocean.navigationdrawerdemo.ui.gallery.GalleryFragment;
+import com.ocean.navigationdrawerdemo.ui.home.HomeFragment;
+import com.ocean.navigationdrawerdemo.ui.slideshow.SlideshowFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -85,16 +88,36 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        return NavigationUI.onNavDestinationSelected(item, navController)
+                || super.onOptionsItemSelected(item);
+    }
+
+    @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-//        switch (item.getItemId()){
-//            case R.id.nav_demo_frag1:
-//                fragment = new DemoFrag1();
-//                loadFragment(fragment);
-//                break;
-//        }
-//
-//        binding.drawerLayout.closeDrawer(GravityCompat.START);
+        switch (item.getItemId()){
+            case R.id.nav_demo_frag1:
+                fragment = new DemoFrag1();
+                loadFragment(fragment);
+                break;
+            case R.id.nav_home:
+                fragment = new HomeFragment();
+                loadFragment(fragment);
+                break;
+            case R.id.nav_gallery:
+                fragment = new GalleryFragment();
+                loadFragment(fragment);
+                break;
+            case R.id.nav_slideshow:
+                fragment = new SlideshowFragment();
+                loadFragment(fragment);
+                break;
+        }
+
+        binding.drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 
