@@ -23,6 +23,7 @@ public class DemoFrag1 extends Fragment {
         DemoFrag1ViewModel viewModel = new ViewModelProvider(this).get(DemoFrag1ViewModel.class);
         binding = FragmentDemoFrag1Binding.inflate(inflater, container, false);
 
+        getActivity().setTitle("Demo Fragment");
         viewModel.getText().observe(getViewLifecycleOwner(), binding.tvDemoFragOne::setText);
         // Inflate the layout for this fragment
         return binding.getRoot();

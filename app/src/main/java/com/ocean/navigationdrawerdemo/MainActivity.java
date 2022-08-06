@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
+//        binding.appBarMain.toolbar.setTitle(R.string.menu_gallery); not working...
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,7 +62,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         /** initializing navigation view set item selected listener to this activity */
         navigationView.setNavigationItemSelectedListener(this);
+
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
